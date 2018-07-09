@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 
-import { Search } from './index';
+import { Search } from './';
 
 describe('<Search/>', () => {
   it('should render without error', () => {
