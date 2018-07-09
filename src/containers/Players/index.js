@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-import Logger from '../../logger';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchPlayers } from '../../actions';
 
 export class Players extends Component {
-  state = {
-    players: []
-  };
-
-  fetchPlayers = async () => {
-    const url = `http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2017&week=1&format=json`;
-
-    try {
-      const res = await axios.get(url);
-      const players = await res.data.players;
-      this.setState({ players });
-      Logger('Loaded players list', 'Players Component').info();
-    } catch (err) {
-      Logger(err, 'Player Component').error();
-    }
+  renderPlayers = players => {
+    return players
+      .map(player => <li key={player.id}>{player.name}</li>)
+      .slice(0, 10);
   };
 
   componentDidMount() {
-    this.fetchPlayers();
+    this.props.fetchPlayers();
   }
 
   render() {
+    const { players } = this.props;
+
     return (
       <div>
         <h2>Players</h2>
-        <ul>
-          {this.state.players.map(player => (
-            <li key={player.id}>{player.name}</li>
-          ))}
-        </ul>
+        <ul>{this.renderPlayers(players)}</ul>
       </div>
     );
   }
 }
 
-export default Players;
+const mapStateToProps = ({ players }) => ({ players });
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ fetchPlayers }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Players);
