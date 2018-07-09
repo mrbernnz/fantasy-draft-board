@@ -1,23 +1,22 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16'
 
 import { Search } from './index';
 
-// configure({adapter: new Adapter()})
-
 describe('<Search/>', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Search />);
-  });
-
-  it('should render form', () => {
-    expect(wrapper.contains(<form />)).toBe(true);
+  it('should render without error', () => {
+    const wrapper = shallow(<Search />);
+    const searchInput = <input id="search" name="term" type="search" />;
+    expect(wrapper).toContainReact(searchInput);
+    expect(wrapper.find('#search')).toHaveTagName('input');
   });
 
   it('should mount in full DOM', () => {
-    expect(mount(<Search />).find('form').length).toBe(1);
+    const wrapper = mount(<Search />);
+    expect(wrapper.find('input').length).toBe(1);
+  });
+
+  it('should render to static HTML', () => {
+    expect(render(<Search />).text()).toEqual('Search Players');
   });
 });
