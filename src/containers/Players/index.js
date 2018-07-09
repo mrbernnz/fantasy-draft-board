@@ -3,13 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPlayers } from '../../actions';
 
-export class Players extends Component {
-  renderPlayers = players => {
-    return players
-      .map(player => <li key={player.id}>{player.name}</li>)
-      .slice(0, 10);
-  };
+import PlayersList from '../../components/Players';
 
+export class PlayersContainer extends Component {
   componentDidMount() {
     this.props.fetchPlayers();
   }
@@ -18,10 +14,10 @@ export class Players extends Component {
     const { players } = this.props;
 
     return (
-      <div>
-        <h2>Players</h2>
-        <ul>{this.renderPlayers(players)}</ul>
-      </div>
+      <section>
+        <h2>NFL Players</h2>
+        <PlayersList players={players} />
+      </section>
     );
   }
 }
@@ -30,4 +26,4 @@ const mapStateToProps = ({ players }) => ({ players });
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchPlayers }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Players);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayersContainer);
