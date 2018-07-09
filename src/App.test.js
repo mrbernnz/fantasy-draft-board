@@ -1,9 +1,17 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { PlayersContainer } from './containers/Players';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<App />', () => {
+  let wrapper;
+
+  beforeEach(function() {
+    wrapper = shallow(<App />);
+  });
+
+  it('renders without crashing', () => {
+    // expect(wrapper).toContainReact(<Players />);
+  });
 });
