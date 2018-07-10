@@ -6,11 +6,9 @@ const getPlayers = async () => {
   const url = `http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2017&week=1&format=json`;
   try {
     const res = await axios.get(url);
-    const players = await res.data.players;
-
-    return players;
+    return res.data.players;
   } catch (err) {
-    Logger(err, '').error();
+    Logger(err, 'FETCH_PLAYERS_ERROR').error();
   }
 };
 
