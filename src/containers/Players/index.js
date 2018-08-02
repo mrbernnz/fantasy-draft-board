@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPlayers } from '../../actions';
 
-import PlayersList from '../../components/Players';
+import PlayersList from '../../components/players-list';
 
 export class PlayersContainer extends Component {
   componentDidMount() {
