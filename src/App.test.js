@@ -12,6 +12,6 @@ describe('<App />', () => {
   });
 
   it('renders without crashing', () => {
-    // expect(wrapper).toContainReact(<Players />);
+    // expect(wrapper).toContainReact(<PlayersContainer />);
   });
 });
