@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as types from '../constants';
 import Logger from '../logger';
 
-const getPlayers = async () => {
+const fetchingPlayers = async () => {
   const url = '/stats?statType=seasonStats&season=2017&week=1&format=json';
   try {
     const res = await axios.get(url);
@@ -14,5 +14,10 @@ const getPlayers = async () => {
 
 export const fetchPlayers = () => ({
   type: types.FETCH_PLAYERS,
-  payload: getPlayers()
+  payload: fetchingPlayers()
+});
+
+export const getSearchTerm = () => ({
+  type: types.GET_TERM,
+  payload: ''
 });
