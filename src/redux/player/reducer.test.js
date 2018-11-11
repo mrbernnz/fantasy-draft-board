@@ -1,4 +1,4 @@
-import PlayersReducer from './players';
+import PlayersReducer from './reducer';
 import * as types from '../constants';
 
 import playersData from '../../mocks/playerData';
@@ -12,7 +12,7 @@ describe('PlayersReducer', () => {
     expect(
       PlayersReducer([], {
         type: types.FETCH_PLAYERS_FULFILLED,
-        payload: playersData
+        players: playersData
       })
     ).toEqual(playersData);
   });
