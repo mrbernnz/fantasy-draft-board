@@ -1,6 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import promiseMiddleware from 'redux-promise-middleware';
-import * as actions from '../actions';
+import * as actions from './actions';
 import * as types from '../constants';
 import fetchMock from 'fetch-mock';
 import { playersData } from '../mocks/playerData';
