@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import * as actions from './actions';
-import * as types from '../constants';
+import * as ActionTypes from '../constants';
 import playersData from '../../mocks/playerData';
 
 const middleware = [thunk];
@@ -22,8 +22,8 @@ describe('Getting players actions', () => {
     });
 
     const expectedActions = [
-      types.FETCH_PLAYERS_PENDING,
-      types.FETCH_PLAYERS_FULFILLED
+      ActionTypes.FETCH_PLAYERS_REQUEST,
+      ActionTypes.FETCH_PLAYERS_SUCCESSFUL
     ];
 
     const store = mockStore({ players: [] });

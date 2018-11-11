@@ -1,5 +1,5 @@
 import PlayersReducer from './reducer';
-import * as types from '../constants';
+import * as ActionTypes from '../constants';
 
 import playersData from '../../mocks/playerData';
 
@@ -11,7 +11,7 @@ describe('PlayersReducer', () => {
   it('should fetch playersData', () => {
     expect(
       PlayersReducer([], {
-        type: types.FETCH_PLAYERS_FULFILLED,
+        type: ActionTypes.FETCH_PLAYERS_SUCCESSFUL,
         players: playersData
       })
     ).toEqual(playersData);

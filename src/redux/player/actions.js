@@ -1,16 +1,16 @@
 import axios from 'axios';
-import * as types from '../constants';
+import * as ActionTypes from '../constants';
 import Logger from '../../utils/logger';
 
-const fetchPlayersRequest = () => ({ type: types.FETCH_PLAYERS_PENDING });
+const fetchPlayersRequest = () => ({ type: ActionTypes.FETCH_PLAYERS_REQUEST });
 
 const fetchPlayersSuccess = players => ({
-  type: types.FETCH_PLAYERS_FULFILLED,
+  type: ActionTypes.FETCH_PLAYERS_SUCCESSFUL,
   players
 });
 
 const fetchPlayersFailure = err => ({
-  type: types.FETCH_PLAYERS_REJECTED,
+  type: ActionTypes.FETCH_PLAYERS_FAILURE,
   err
 });
 
@@ -22,7 +22,7 @@ const fetchingPlayers = async dispatch => {
     dispatch(fetchPlayersSuccess(players));
   } catch (err) {
     dispatch(fetchPlayersFailure(err));
-    Logger(err, types.FETCH_PLAYERS_REJECTED).error();
+    Logger(err, ActionTypes.FETCH_PLAYERS_FAILURE).error();
   }
 };
 
