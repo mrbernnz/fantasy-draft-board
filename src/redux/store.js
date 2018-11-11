@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import promiseMiddleware from 'redux-promise-middleware';
+import thunk from 'redux-thunk';
 
 import rootReducer from './rootReducer';
 
-const middleware = applyMiddleware(promiseMiddleware());
+const middleware = applyMiddleware(thunk);
 
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
