@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from '../constants';
-import Logger from '../logger';
+import Logger from '../../utils/logger';
 
 const fetchingPlayers = async () => {
   const url = '/stats?statType=seasonStats&season=2017&week=1&format=json';
@@ -15,9 +15,4 @@ const fetchingPlayers = async () => {
 export const fetchPlayers = () => ({
   type: types.FETCH_PLAYERS,
   payload: fetchingPlayers()
-});
-
-export const getSearchTerm = () => ({
-  type: types.GET_TERM,
-  payload: ''
 });

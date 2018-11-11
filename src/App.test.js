@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { PlayersContainer } from './containers/Players';
+import { PlayersContainer } from './components/containers/Players';
 
 describe('<App />', () => {
   let wrapper;

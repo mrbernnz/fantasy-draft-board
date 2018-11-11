@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import PlayersContainer from './containers/Players';
+import PlayersContainer from './components/containers/Players';
 import './App.css';
 
 export default class App extends Component {

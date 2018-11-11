@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPlayers } from '../../actions';
+import { fetchPlayers } from '../../../redux/player/actions';
 
-import PlayersList from '../../components/players-list';
+import PlayersList from '../../presentational/players-list';
 
 export class PlayersContainer extends Component {
   componentDidMount() {

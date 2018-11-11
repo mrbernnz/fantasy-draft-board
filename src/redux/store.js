@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 
-import reducers from '../reducers';
+import rootReducer from './rootReducer';
 
 const middleware = applyMiddleware(promiseMiddleware());
 
@@ -12,4 +12,4 @@ const composeEnhancers =
 
 const enhancer = composeEnhancers(middleware);
 
-export default createStore(reducers, enhancer);
+export default createStore(rootReducer, enhancer);

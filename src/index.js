@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import axios from 'axios';
 
 import './index.css';
-import store from './store';
+import store from './redux/store';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
