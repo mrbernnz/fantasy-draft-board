@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import * as actions from './actions';
 import * as types from '../constants';
-import { playersData } from '../../mocks/playerData';
+import playersData from '../../mocks/playerData';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);

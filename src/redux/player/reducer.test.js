@@ -1,7 +1,7 @@
 import PlayersReducer from './players';
 import * as types from '../constants';
 
-import { playersData } from '../mocks/playerData';
+import playersData from '../../mocks/playerData';
 
 describe('PlayersReducer', () => {
   it('should have a default state', () => {

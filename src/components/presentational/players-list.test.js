@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, render } from 'enzyme';
 
 import PlayersList from './players-list';
-import { playersData } from '../mocks/playerData';
+import playersData from '../../mocks/playerData';
 
 describe('<PlayersList />', () => {
   it('should render zero items', () => {

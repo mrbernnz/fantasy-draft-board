@@ -1,4 +1,4 @@
-export const playersData = [
+const playersData = [
   {
     id: '100029',
     esbid: null,
@@ -83,3 +83,5 @@ export const playersData = [
     weekProjectedPts: 0
   }
 ];
+
+export default playersData;
