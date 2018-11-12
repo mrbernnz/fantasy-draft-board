@@ -12,7 +12,7 @@ describe('Getting players actions', () => {
   beforeEach(() => moxios.install());
   afterEach(() => moxios.uninstall());
 
-  test('should create FETCH_PLAYERS_FULFILLED after successfully fetching players', () => {
+  it('should create FETCH_PLAYERS_FULFILLED after successfully fetching players', () => {
     moxios.wait(() => {
       const req = moxios.requests.mostRecent();
       req.respondWith({
