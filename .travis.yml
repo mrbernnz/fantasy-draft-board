@@ -1,0 +1,15 @@
+language: node_js
+cache:
+  yarn: true
+  directories: 
+    - node_modules
+script:
+  - yarn test
+  - yarn build
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: curry-chicken-draft-board.surge.sh/
+  project: ./build/
+on:
+  branch: master
